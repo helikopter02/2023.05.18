@@ -1,11 +1,11 @@
 ETHERCHANNEL:
-	SW0:
+	!SW0:
 		int range f0/3-4
 		channel-group 3 mode des
 		interface port-channel 3
 		swichport mode trunk
 		switchport trunk allowed vlan 1
-STP:
+!STP:
 	SW0:
 		spanning-tree vlan 1 priority 0
         

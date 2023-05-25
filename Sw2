@@ -1,4 +1,4 @@
-SW2:
+!SW2:
 		int range f0/3-4
 		channel-group 3 mode auto
 		interface port-channel 3

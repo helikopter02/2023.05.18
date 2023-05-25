@@ -1,5 +1,5 @@
-ETHERCHANNEL:
-         SW1:	
+!ETHERCHANNEL:
+         !SW1:	
 		        int range f0/1-2
 		         channel-group 1 mode auto
 		         interface port-channel 1
