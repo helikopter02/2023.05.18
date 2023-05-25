@@ -1,4 +1,4 @@
-ETHERCHANNEL:
+!ETHERCHANNEL:
 	!SW0:
 		int range f0/3-4
 		channel-group 3 mode des

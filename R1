@@ -1,4 +1,4 @@
-R1:
+!R1:
     enable
     conf t
     ip domain-name Alma
