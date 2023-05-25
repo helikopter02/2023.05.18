@@ -1,0 +1,78 @@
+R1:
+    enable
+    conf t
+    ip domain-name Alma
+    banner motd .
+    körte.
+    service password-encryption
+    enable secret cisco
+    line con 0
+    pass class
+    exec-timeout 15
+    login
+    exit
+    line vty 0 15
+    pass class
+    exec-timeout 15
+    login local
+    exit
+    username admin privilege 15 password admin
+    crypto key generate rsa
+    1024
+    ip ssh version 2
+    ip ssh time-out 119
+    line vty 0 15 
+    transport input ssh
+    exit
+    router rip
+    network 20.0.0.0
+
+R2:
+    router rip
+    network 20.0.0.0
+
+R0:
+    router rip
+    network 20.0.0.0   
+    network 10.0.0.0   
+    ip dhcp snooping trust
+
+ETHERCHANNEL:
+	SW1:	
+		int range f0/1-2
+		channel-group 1 mode auto
+		interface port-channel 1
+		swichport mode trunk
+		switchport trunk allowed vlan 1
+
+		int range f0/3-4
+		channel-group 2 mode des
+		interface port-channel 2
+		swichport mode trunk
+		switchport trunk allowed vlan 1
+	SW0:
+		int range f0/3-4
+		channel-group 3 mode des
+		interface port-channel 3
+		swichport mode trunk
+		switchport trunk allowed vlan 1
+        
+	SW2:
+		int range f0/3-4
+		channel-group 3 mode auto
+		interface port-channel 3
+		swichport mode trunk
+		switchport trunk allowed vlan 1
+
+		int range f0/1-2
+		channel-group 2 mode auto
+		interface port-channel 2
+		swichport mode trunk
+		switchport trunk allowed vlan 1	
+
+STP:
+	SW0:
+		spanning-tree vlan 1 priority 0
+        
+
+
