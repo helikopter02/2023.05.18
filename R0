@@ -1,4 +1,4 @@
-R1:
+R0:
     enable
     conf t
     ip domain-name Alma
@@ -25,15 +25,7 @@ R1:
     transport input ssh
     exit
     router rip
-    network 20.0.0.0
-
-R2:
-    router rip
-    network 20.0.0.0
-
-R0:
-    router rip
-    network 20.0.0.0   
+    network 20.0.0.0  
     network 10.0.0.0   
     ip dhcp snooping trust
 

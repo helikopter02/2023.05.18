@@ -1,0 +1,14 @@
+ip címek:
+        10.0.0.0/24 R0-a sw-k felé
+
+        20.0.1.0/24 R1 és R0 között a rip-hez
+
+        10.3.0/24 R0 és R2 között a rip-hez
+
+        100.0.2.0/24 R1 és R2 között a rip-hez
+
+        10.1.1.0/24 R2-töl a serverek felé illetve a serverek
+
+vlan 10:
+        50.0.0.0/24 Az első címet az R0 adja utánna sorban az Sw-k majd végül a Pc
+
