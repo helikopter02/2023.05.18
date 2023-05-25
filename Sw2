@@ -1,0 +1,12 @@
+SW2:
+		int range f0/3-4
+		channel-group 3 mode auto
+		interface port-channel 3
+		swichport mode trunk
+		switchport trunk allowed vlan 1
+
+		int range f0/1-2
+		channel-group 2 mode auto
+		interface port-channel 2
+		swichport mode trunk
+		switchport trunk allowed vlan 1	
